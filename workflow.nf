@@ -4,6 +4,7 @@
 params.reads = "$projectDir/input/*{1,2}.fastq.gz"
 params.reference = "$projectDir/reference/GRCh37-lite.fa.gz"
 params.outputDir = "output"
+params.rscript ="$projectDir/script/annotate_MACS2_peaks.R"
 
 log.info """\
     P I P E L I N E
@@ -192,7 +193,6 @@ process CHIPSEEKER {
     output:
     tuple val(sample_id), path("chipseeker_output/${sample_id}/")
     
-
     script:
     """
     mkdir -p chipseeker_output
