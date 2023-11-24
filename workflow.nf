@@ -16,8 +16,8 @@ log.info """\
 
 
 // Conda environment for FastQC
-process FASTQC {
-    tag "FASTQC on $sample_id"
+process PRE_FASTQC {
+    tag "PRE_FASTQC on $sample_id"
     publishDir params.outputDir, mode: 'copy'
     
     input:
@@ -34,8 +34,8 @@ process FASTQC {
     """ 
 }
 
-process MULTIQC {
-    tag "MULTIQC on $sample_id"
+process PRE_MULTIQC {
+    tag "PRE_MULTIQC on $sample_id"
     publishDir params.outputDir, mode:'copy'
 
     input:
@@ -50,8 +50,8 @@ process MULTIQC {
     """
 }
 
-process FASTQC2 {
-    tag "FASTQC2 on $sample_id"
+process POST_FASTQC {
+    tag "POST_FASTQC on $sample_id"
     publishDir params.outputDir, mode: 'copy'
     
     input:
@@ -68,8 +68,8 @@ process FASTQC2 {
     """ 
 }
 
-process MULTIQC2 {
-    tag "MULTIQC2 on $sample_id"
+process POST_MULTIQC {
+    tag "POST_MULTIQC on $sample_id"
     publishDir params.outputDir, mode:'copy'
 
     input:
@@ -183,14 +183,14 @@ workflow {
         .fromFilePairs(params.reads, checkIfExists: true)
         .set { read_pairs_ch }
 
-    pre_fastqc_ch = FASTQC(read_pairs_ch)
-    MULTIQC(pre_fastqc_ch)
+    pre_fastqc_ch = PRE_FASTQC(read_pairs_ch)
+    PRE_MULTIQC(pre_fastqc_ch)
 
     trimmomatic_ch = TRIMMOMATIC(read_pairs_ch)
 
-    post_fastqc_ch = FASTQC2(trimmomatic_ch)
+    post_fastqc_ch = POST_FASTQC(trimmomatic_ch)
     
-    MULTIQC2(post_fastqc_ch)
+    POST_MULTIQC(post_fastqc_ch)
 
     minimap2_ch = MINIMAP2_SAMTOOLS(trimmomatic_ch, params.reference)
 
