@@ -157,7 +157,10 @@ process MACS2 {
     tuple val(sample_id), path(bam)
 
     output:
-    tuple val(sample_id), path("MACS2_output/${sample_id}")
+    tuple val(sample_id), 
+    path("MACS2_output/${sample_id}/${sample_id}_peaks.narrowPeak"), 
+    path("MACS2_output/${sample_id}/${sample_id}_peaks.xls"), 
+    path("MACS2_output/${sample_id}/${sample_id}_summits.bed")
     
 
     script:
@@ -165,7 +168,7 @@ process MACS2 {
     mkdir -p MACS2_output
     macs2 callpeak \
     --treatment $bam \
-    --name ${sample_id} \
+    --name "${sample_id}" \
     --format BAMPE \
     --nomodel \
     --keep-dup all \
@@ -176,6 +179,28 @@ process MACS2 {
     """
 }
 
+process CHIPSEEKER {
+    tag "CHIPSEEKER on $sample_id"
+    publishDir params.outputDir, mode: 'copy'
+    
+    input:
+    tuple val(sample_id), 
+    path(narrowPeak), 
+    path(peaks_xls), 
+    path(summits_bed)
+
+    output:
+    tuple val(sample_id), path("chipseeker_output/${sample_id}/")
+    
+
+    script:
+    """
+    mkdir -p chipseeker_output
+    mkdir -p chipseeker_output/${sample_id}
+    Rscript $projectDir/script/annotate_MACS2_peaks.R chipseeker_output/${sample_id} $narrowPeak
+    
+    """
+}
 
 // Define the workflow
 workflow {
@@ -197,6 +222,8 @@ workflow {
     markdup_ch = MARKDUP(minimap2_ch)
 
     macs2_ch = MACS2(markdup_ch)
+
+    CHIPSEEKER(macs2_ch)
 }
 
 workflow.onComplete {
