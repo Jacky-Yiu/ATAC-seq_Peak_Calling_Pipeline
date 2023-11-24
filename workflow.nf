@@ -2,21 +2,30 @@
 
 // Define input parameters
 params.reads = "$projectDir/input/*{1,2}.fastq.gz"
-params.reference = "$projectDir/reference/GRCh37-lite.fa.gz"
 params.outputDir = "output"
-params.rscript ="$projectDir/script/annotate_MACS2_peaks.R"
 
 log.info """\
     P I P E L I N E
     ===================================
     reads        : ${params.reads}
-    reference    : ${params.reference}
     outdir       : ${params.outputDir}
     """
     .stripIndent()
 
 
 // Conda environment for FastQC
+process DOWNLOAD_REFERENCE {
+    tag "Download Reference"
+    output:
+    path "reference/hg19.fa.gz"
+
+    script:
+    """
+    mkdir -p reference
+    wget -O reference/hg19.fa.gz https://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/hg19.fa.gz
+    """
+}
+
 process PRE_FASTQC {
     tag "PRE_FASTQC on $sample_id"
     publishDir params.outputDir, mode: 'copy'
@@ -190,20 +199,27 @@ process CHIPSEEKER {
     path(peaks_xls), 
     path(summits_bed)
 
+    path(script)
+
     output:
     tuple val(sample_id), path("chipseeker_output/${sample_id}/")
     
+
     script:
     """
     mkdir -p chipseeker_output
     mkdir -p chipseeker_output/${sample_id}
-    Rscript $projectDir/script/annotate_MACS2_peaks.R chipseeker_output/${sample_id} $narrowPeak
+    Rscript $script chipseeker_output/${sample_id} $narrowPeak
     
     """
 }
 
 // Define the workflow
 workflow {
+    reference_ch = DOWNLOAD_REFERENCE()
+
+    script_ch = file("$projectDir/script/annotate_MACS2_peaks.R")
+    
     Channel
         .fromFilePairs(params.reads, checkIfExists: true)
         .set { read_pairs_ch }
@@ -217,13 +233,13 @@ workflow {
     
     POST_MULTIQC(post_fastqc_ch)
 
-    minimap2_ch = MINIMAP2_SAMTOOLS(trimmomatic_ch, params.reference)
+    minimap2_ch = MINIMAP2_SAMTOOLS(trimmomatic_ch, reference_ch)
 
     markdup_ch = MARKDUP(minimap2_ch)
 
     macs2_ch = MACS2(markdup_ch)
 
-    CHIPSEEKER(macs2_ch)
+    CHIPSEEKER(macs2_ch, script_ch)
 }
 
 workflow.onComplete {
