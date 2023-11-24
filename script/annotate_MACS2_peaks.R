@@ -24,7 +24,7 @@ annotateMacsPeaks <- function(peakFile, output_dir) {
 
   # Save plot directly to the output directory
   jpeg(file = file.path(output_dir, "piechart.jpeg"))
-  pie_chart <- plotAnnoPie(peakAnno)
+  plotAnnoPie(peakAnno)
   dev.off()
 }
 
