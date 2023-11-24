@@ -1,0 +1,14 @@
+# Ignore the "output" directory
+output/
+
+# Ignore the "original" directory
+original/
+
+# Ignore the "work" directory
+work/
+
+# Ignore the ".nextflow" directory
+.nextflow/
+
+# Ignore files ending with ".log"
+*.nextflow.log*
