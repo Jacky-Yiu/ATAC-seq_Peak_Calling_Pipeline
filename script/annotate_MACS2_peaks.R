@@ -9,24 +9,22 @@ if (length(args) < 2) {
 }
 
 output_dir <- args[1]
-input_file <- args[2]
+peakFile <- args[2]
 
 # Check if input file exists
-if (!file.exists(input_file)) {
+if (!file.exists(peakFile)) {
   stop("Input file does not exist.")
 }
 
 # Annotate peaks
-annotateMacsPeaks <- function(peakFile, output_dir) {
-  peaks <- readPeakFile(peakFile)
-  peakAnno <- annotatePeak(peaks, tssRegion = c(-3000, 3000),
+
+peaks <- readPeakFile(peakFile)
+peakAnno <- annotatePeak(peaks, tssRegion = c(-3000, 3000),
                            TxDb = txdb, annoDb = "org.Hs.eg.db")
 
-  # Save plot directly to the output directory
-  jpeg(file = file.path(output_dir, "piechart.jpeg"))
-  pie_chart <- plotAnnoPie(peakAnno)
-  dev.off()
-}
+# Save plot directly to the output directory
+pdf(file = file.path(output_dir, "peak_plot.pdf"))
+plotAnnoPie(peakAnno)
+upsetplot(peakAnno)
+dev.off()
 
-# Annotate peaks with the given input file
-annotateMacsPeaks(input_file, output_dir)
