@@ -5,7 +5,7 @@ txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
 # Check command line arguments
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 2) {
-  stop("Usage: Rscript script.R <output_directory> <input_file>")
+  stop("Usage: Rscript annotate_MACS2_peaks.R <output_directory> <input_file>")
 }
 
 output_dir <- args[1]
@@ -17,10 +17,8 @@ if (!file.exists(peakFile)) {
 }
 
 # Annotate peaks
-
 peaks <- readPeakFile(peakFile)
-peakAnno <- annotatePeak(peaks, tssRegion = c(-3000, 3000),
-                           TxDb = txdb, annoDb = "org.Hs.eg.db")
+peakAnno <- annotatePeak(peaks, tssRegion = c(-3000, 3000), TxDb = txdb, annoDb = "org.Hs.eg.db")
 
 # Save plot directly to the output directory
 pdf(file = file.path(output_dir, "peak_plot.pdf"))
