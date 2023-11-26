@@ -10,5 +10,8 @@ work/
 # Ignore the ".nextflow" directory
 .nextflow/
 
-# Ignore files ending with ".log"
+# Ignore files produced by nexflow
 *.nextflow.log*
+*report*html
+*timeline*html
+*trace*txt
