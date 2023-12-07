@@ -183,11 +183,11 @@ For reference, hg38 is used as it is the most popular option. it is automaticall
 
 The four outputs of this pipeline are as follows:
 
-1.  `output/{sample_ID}_pre-alignment_multiQC_report.html`
+1.  `output/{sample_ID}_pre_trimming_multiQC_report.html`
 
     -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer over-representation and contamination of primers and adapters in the pre-trimmed pair-end fastq.
 
-2.  `output/{sample_ID}_post-alignment_multiQC_report.html`
+2.  `output/{sample_ID}_post_trimming_multiQC_report.html`
 
     -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer over-representation and contamination of primers and adapters in the trimmed pair-end fastq.
 
@@ -219,9 +219,7 @@ The four outputs of this pipeline are as follows:
 
             ![](images/jacky_upset.png)
 
-### Expected Output Tree
-
-![](images/tree.png)
+### Expected Output Directory Tree
 
 ------------------------------------------------------------------------
 
