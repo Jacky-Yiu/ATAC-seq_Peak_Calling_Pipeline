@@ -1,4 +1,4 @@
-# BIOF501 Term Project: ATAC-seq Peak-calling and Annotation Pipeline
+# ATAC-seq Peak-calling and Annotation Pipeline
 
 ### *By Chun Hei (Jacky) Yiu*
 
