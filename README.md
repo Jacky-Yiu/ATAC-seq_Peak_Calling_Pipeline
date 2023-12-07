@@ -54,7 +54,7 @@ These steps will allow researchers to conduct robust analysis on ATAC-seq data a
 
 ### Rationale
 
-Despite the simplicity and robustness of ATAC-seq, a major impediment exists as there are few bioinformatic analysis tools developed specifically for ATAC-seq data [[7](#references)]. Analysis tools used in ChIP-seq and DNase-seq (e.g. [MACS2](#0) [[8]#references)], [HOMER](#0) [[9](#references)], etc) have been applied to ATAC-seq assuming similar data characteristics [[10](#references)].
+Despite the simplicity and robustness of ATAC-seq, a major impediment exists as there are few bioinformatic analysis tools developed specifically for ATAC-seq data [[7](#references)]. Analysis tools used in ChIP-seq and DNase-seq (e.g. MACS2 [[8](#references)], HOMER [[9](#references)], etc) have been applied to ATAC-seq assuming similar data characteristics [[10](#references)].
 
 The major focus of this pipeline is to show case current resources for ATAC-seq analysis and develop a basic pipeline workflow that covers the major parts of ATAC-seq data analysis.
 
