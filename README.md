@@ -205,11 +205,11 @@ The four outputs of this pipeline are as follows:
 
         -   Pie chart of genomic region annotation:
 
-            ![](images/pie-02.png){width="426"}
+            ![](images/jacky_pie.png){width="499"}
 
         -   Upset Plot of genomic region annotation:
 
-            ![](images/offset.png){width="554"}
+            ![](images/jacky_upset.png){width="570"}
 
 ------------------------------------------------------------------------
 
