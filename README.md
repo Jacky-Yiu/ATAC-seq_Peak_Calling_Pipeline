@@ -151,7 +151,7 @@ For this pipeline, an example human genome ATAC-seq data is used, it came from a
 
 Since the aim of the pipeline is to cover the general peak analysis of ATAC-seq, the background of the data is not of particular interest to me, I only need an example ATAC-seq data on human genome.
 
-The original data is more than 2GB, I used the following command to sample the original fastQ and produce two example sample pair-end reads that is used in the pipeline.
+The original data is more than 2GB, I used the following command to sample the original fastq and produce two example sample pair-end reads that is used in the pipeline.
 
 ``` bash
 seqtk sample -s100 SRR26784755_2.fastq.gz 100000 > genome_a2.fq
@@ -163,7 +163,7 @@ seqtk sample -s654 SRR26784755_1.fastq.gz 100000 > genome_b1.fq
 gzip genome_*.fq
 ```
 
-Basically, `seqtk sample` randomly sample (seed = 100, 654) 100000 reads from the original fastq to create 2 smaller sample. The pipeline is designe to take in multiple fastq in the input file as long as the have the following naming convention:
+Basically, `seqtk sample` randomly sample (seeds = 100 and 654) 100000 reads from the original fastq to create 2 smaller sample. The pipeline is design to take in multiple fastq in the input file as long as the have the following naming convention:
 
 -   `{sample_name}1.fq.gz`
 
@@ -181,11 +181,11 @@ The four outputs of this pipeline are as follows:
 
 1.  Pre-trim MultiQC Report
 
-    -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer overrepresentation and contamination of primers and adapters in the pre-trimmed pair-end fastq.
+    -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer over-representation and contamination of primers and adapters in the pre-trimmed pair-end fastq.
 
 2.  Post-trim MultiQC Report
 
-    -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer overrepresentation and contamination of primers and adapters in the trimmed pair-end fastq.
+    -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer over-representation and contamination of primers and adapters in the trimmed pair-end fastq.
 
 3.  Peaks File
 

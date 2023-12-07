@@ -12,6 +12,5 @@ work/
 
 # Ignore files produced by nexflow
 *.nextflow.log*
-*report*html
-*timeline*html
+*html
 *trace*txt
