@@ -12,6 +12,8 @@
 
 -   `script` : Contains the R scripts used in the pipeline for [ChIPseeker](https://bioconductor.org/packages/ChIPseeker/) peaks annotations.
 
+-   `images`: Contains the images used in this README.
+
 ### Files
 
 -   `dag.png`: Graphical representation of the overall workflow in PNG format.
@@ -213,7 +215,7 @@ The four outputs of this pipeline are as follows:
 
 ------------------------------------------------------------------------
 
-## References
+## References {#references}
 
 [1] Buenrostro, Jason D., Beijing Wu, Howard Y. Chang, and William J. Greenleaf. 2015. "ATAC-seq: A Method for Assaying Chromatin Accessibility Genome-Wide." *Current Protocols in Molecular Biology* 109 (January): 21.29.1--9. <https://doi.org/10.1002/0471142727.mb2129s109>.
 
