@@ -1,6 +1,6 @@
 library(ChIPseeker)
-library(TxDb.Hsapiens.UCSC.hg19.knownGene)
-txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
 
 # Check command line arguments
 args <- commandArgs(trailingOnly = TRUE)

@@ -17,11 +17,11 @@ log.info """\
 process DOWNLOAD_REFERENCE {
     tag "Download Reference"
     output:
-    path "hg19.fa.gz"
+    path "hg38.fa.gz"
 
     script:
     """
-    curl  https://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/hg19.fa.gz > hg19.fa.gz
+    curl  https://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/hg38.fa.gz > hg38.fa.gz
     """
 }
 
