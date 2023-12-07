@@ -72,25 +72,17 @@ The following is a simplified representation of the workflow in a Directed Acycl
 
 This pipeline will take in pair-end Fastq generatedby ATAC-Seq and go through 4 phases
 
-1.  Pre-alignment QC
+1.  Pre-alignment QC:
 
-2.  Alignment
+2.  Alignment:
 
-3.  Post-alignment QC
+3.  Post-alignment QC:
 
-4.  Peak Calling
+4.  Peak Calling:
 
-5.  Peak Annotation
+5.  Peak Annotation:
 
 ### Data Used
-
-Two files are used as inputs; *WNV_Genomes.fasta* and *Reference.fasta*. These can be found in the Viral_Sequence_Data directory. *WNV_Genomes.fasta* includes all complete WNV genomes sampled in North America that are listed on [NCBI Virus](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=taxid:11082). Reference.fasta is an in-frame coding sequence for the genome.
-
-The Genomes file can be altered to include or exclude different genomes to change the search space. For example, if I wanted to search for selected sites in European or Asian WNV variants, I would use a genomes file with only those sequences.
-
-Changing the reference file can alter the scope of the analysis; e.g., if you wanted to determine if only a specific segment of the genome is under selection, like the envelope protein, you could change the reference file to only include that sequence.
-
-Note: The reference file *must* be in frame for the pipeline to function correctly.
 
 ------------------------------------------------------------------------
 
