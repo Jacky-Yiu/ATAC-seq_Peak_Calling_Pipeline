@@ -52,7 +52,7 @@ These steps will allow researchers to conduct robust analysis on ATAC-seq data a
 
 ### Rationale
 
-Despite the simplicity and robustness of ATAC-seq, a major impediment exists as there are few bioinformatic analysis tools developed specifically for ATAC-seq data [[7](#references)]. Analysis tools used in ChIP-seq and DNase-seq ([MACS2](https://pypi.org/project/MACS2/) [[8](#references)], [ChIPseeker](https://bioconductor.org/packages/ChIPseeker/) [@yu2015], [HOMER](http://homer.ucsd.edu/homer/ngs/annotation.html) [[9](#references)], etc) have been applied to ATAC-seq assuming similar data characteristics [[10](#references)].
+Despite the simplicity and robustness of ATAC-seq, a major impediment exists as there are few bioinformatic analysis tools developed specifically for ATAC-seq data [[7](#0)]. Analysis tools used in ChIP-seq and DNase-seq (e.g. [MACS2](#0) [[8](#0)], [HOMER](#0) [[9](#0)], etc) have been applied to ATAC-seq assuming similar data characteristics [[10](#0)].
 
 The major focus of this pipeline is to show case current resources for ATAC-seq analysis and develop a basic pipeline workflow that covers the major parts of ATAC-seq data analysis.
 
@@ -215,41 +215,38 @@ The four outputs of this pipeline are as follows:
 
 ## References {#references}
 
-[1] Buenrostro, Jason D., Beijing Wu, Howard Y. Chang, and William J. Greenleaf. 2015. \"ATAC-seq: A Method for Assaying Chromatin Accessibility Genome-Wide.\" *Current Protocols in Molecular Biology* 109 (January): 21.29.1--9. <https://doi.org/10.1002/0471142727.mb2129s109>.
+[1] Buenrostro, Jason D., Beijing Wu, Howard Y. Chang, and William J. Greenleaf. 2015. "ATAC-seq: A Method for Assaying Chromatin Accessibility Genome-Wide." *Current Protocols in Molecular Biology* 109 (January): 21.29.1--9. <https://doi.org/10.1002/0471142727.mb2129s109>.
 
-[2] Yan, Feng, David R. Powell, David J. Curtis, and Nicholas C. Wong. 2020. \"From Reads to Insight: A Hitchhiker\'s Guide to ATAC-Seq Data Analysis.\" *Genome Biology* 21 (1): 22. <https://doi.org/10.1186/s13059-020-1929-3>.
+[2] Yan, Feng, David R. Powell, David J. Curtis, and Nicholas C. Wong. 2020. "From Reads to Insight: A Hitchhiker's Guide to ATAC-Seq Data Analysis." *Genome Biology* 21 (1): 22. <https://doi.org/10.1186/s13059-020-1929-3>.
 
-[3] Cusanovich, Darren A., Andrew J. Hill, Delasa Aghamirzaie, Riza M. Daza, Hannah A. Pliner, Joel B. Berletch, Galina N. Filippova, et al. 2018. \"A Single-Cell Atlas of in Vivo Mammalian Chromatin Accessibility.\" *Cell* 174 (5): 1309--1324.e18. <https://doi.org/10.1016/j.cell.2018.06.052>.
+[3] Cusanovich, Darren A., Andrew J. Hill, Delasa Aghamirzaie, Riza M. Daza, Hannah A. Pliner, Joel B. Berletch, Galina N. Filippova, et al. 2018. "A Single-Cell Atlas of in Vivo Mammalian Chromatin Accessibility." *Cell* 174 (5): 1309--1324.e18. <https://doi.org/10.1016/j.cell.2018.06.052>.
 
-[4] Corces, M. Ryan, Jason D. Buenrostro, Beijing Wu, Peyton G. Greenside, Steven M. Chan, Julie L. Koenig, Michael P. Snyder, et al. 2016. \"Lineage-Specific and Single-Cell Chromatin Accessibility Charts Human Hematopoiesis and Leukemia Evolution.\" *Nature Genetics* 48 (10): 1193--203. <https://doi.org/10.1038/ng.3646>.
+[4] Corces, M. Ryan, Jason D. Buenrostro, Beijing Wu, Peyton G. Greenside, Steven M. Chan, Julie L. Koenig, Michael P. Snyder, et al. 2016. "Lineage-Specific and Single-Cell Chromatin Accessibility Charts Human Hematopoiesis and Leukemia Evolution." *Nature Genetics* 48 (10): 1193--203. <https://doi.org/10.1038/ng.3646>.
 
-[5] Bryois, Julien, Melanie E. Garrett, Lingyun Song, Alexias Safi, Paola Giusti-Rodriguez, Graham D. Johnson, Annie W. Shieh, et al. 2018. \"Evaluation of Chromatin Accessibility in Prefrontal Cortex of Individuals with Schizophrenia.\" *Nature Communications* 9 (1): 3121. <https://doi.org/10.1038/s41467-018-05379-y>.
+[5] Bryois, Julien, Melanie E. Garrett, Lingyun Song, Alexias Safi, Paola Giusti-Rodriguez, Graham D. Johnson, Annie W. Shieh, et al. 2018. "Evaluation of Chromatin Accessibility in Prefrontal Cortex of Individuals with Schizophrenia." *Nature Communications* 9 (1): 3121. <https://doi.org/10.1038/s41467-018-05379-y>.
 
-[6] Buenrostro, Jason D., Paul G. Giresi, Lisa C. Zaba, Howard Y. Chang, and William J. Greenleaf. 2013. \"Transposition of Native Chromatin for Fast and Sensitive Epigenomic Profiling of Open Chromatin, DNA-Binding Proteins and Nucleosome Position.\" *Nature Methods* 10 (12): 1213--18. <https://doi.org/10.1038/nmeth.2688>.
+[6] Buenrostro, Jason D., Paul G. Giresi, Lisa C. Zaba, Howard Y. Chang, and William J. Greenleaf. 2013. "Transposition of Native Chromatin for Fast and Sensitive Epigenomic Profiling of Open Chromatin, DNA-Binding Proteins and Nucleosome Position." *Nature Methods* 10 (12): 1213--18. <https://doi.org/10.1038/nmeth.2688>.
 
-[7] Angarica, Vladimir Espinosa, and Antonio del Sol. 2017. \"Bioinformatics Tools for Genome-Wide Epigenetic Research.\" In, edited by Raul Delgado-Morales, 489--512. Advances in Experimental Medicine and Biology. Cham: Springer International Publishing. <https://doi.org/10.1007/978-3-319-53889-1_25>.
+[7] Angarica, Vladimir Espinosa, and Antonio del Sol. 2017. "Bioinformatics Tools for Genome-Wide Epigenetic Research." In, edited by Raul Delgado-Morales, 489--512. Advances in Experimental Medicine and Biology. Cham: Springer International Publishing. <https://doi.org/10.1007/978-3-319-53889-1_25>.
 
-[8] Zhang, Yong, Tao Liu, Clifford A. Meyer, Jérôme Eeckhoute, David S. Johnson, Bradley E. Bernstein, Chad Nusbaum, et al. 2008. \"Model-Based Analysis of ChIP-Seq (MACS).\" *Genome Biology* 9 (9): R137. <https://doi.org/10.1186/gb-2008-9-9-r137>.
+[8] Zhang, Yong, Tao Liu, Clifford A. Meyer, Jérôme Eeckhoute, David S. Johnson, Bradley E. Bernstein, Chad Nusbaum, et al. 2008. "Model-Based Analysis of ChIP-Seq (MACS)." *Genome Biology* 9 (9): R137. <https://doi.org/10.1186/gb-2008-9-9-r137>.
 
-[9] Heinz, Sven, Christopher Benner, Nathanael Spann, Eric Bertolino, Yin C. Lin, Peter Laslo, Jason X. Cheng, Cornelis Murre, Harinder Singh, and Christopher K. Glass. 2010. \"Simple combinations of lineage-determining transcription factors prime cis-regulatory elements required for macrophage and B cell identities.\" *Molecular Cell* 38 (4): 576--89. <https://doi.org/10.1016/j.molcel.2010.05.004>.
+[9] Heinz, Sven, Christopher Benner, Nathanael Spann, Eric Bertolino, Yin C. Lin, Peter Laslo, Jason X. Cheng, Cornelis Murre, Harinder Singh, and Christopher K. Glass. 2010. "Simple combinations of lineage-determining transcription factors prime cis-regulatory elements required for macrophage and B cell identities." *Molecular Cell* 38 (4): 576--89. <https://doi.org/10.1016/j.molcel.2010.05.004>.
 
-[10] Chang, Pearl, Moloya Gohain, Ming-Ren Yen, and Pao-Yang Chen. 2018. \"Computational Methods for Assessing Chromatin Hierarchy.\" *Computational and Structural Biotechnology Journal* 16 (January): 43--53. <https://doi.org/10.1016/j.csbj.2018.02.003>.
+[10] Chang, Pearl, Moloya Gohain, Ming-Ren Yen, and Pao-Yang Chen. 2018. "Computational Methods for Assessing Chromatin Hierarchy." *Computational and Structural Biotechnology Journal* 16 (January): 43--53. <https://doi.org/10.1016/j.csbj.2018.02.003>.
 
-[11] Ewels, Philip, Måns Magnusson, Sverker Lundin, and Max Käller. 2016. \"MultiQC: Summarize Analysis Results for Multiple Tools and Samples in a Single Report.\" *Bioinformatics* 32 (19): 3047--48. <https://doi.org/10.1093/bioinformatics/btw354>.
+[11] Ewels, Philip, Måns Magnusson, Sverker Lundin, and Max Käller. 2016. "MultiQC: Summarize Analysis Results for Multiple Tools and Samples in a Single Report." *Bioinformatics* 32 (19): 3047--48. <https://doi.org/10.1093/bioinformatics/btw354>.
 
-[12] Bolger, Anthony M., Marc Lohse, and Bjoern Usadel. 2014. \"Trimmomatic: A Flexible Trimmer for Illumina Sequence Data.\" *Bioinformatics* 30 (15): 2114--20. <https://doi.org/10.1093/bioinformatics/btu170>.
+[12] Bolger, Anthony M., Marc Lohse, and Bjoern Usadel. 2014. "Trimmomatic: A Flexible Trimmer for Illumina Sequence Data." *Bioinformatics* 30 (15): 2114--20. <https://doi.org/10.1093/bioinformatics/btu170>.
 
-[13] Li, Heng, and Richard Durbin. 2009. \"Fast and Accurate Short Read Alignment with Burrowswheeler Transform.\" *Bioinformatics* 25 (14): 1754--60. <https://doi.org/10.1093/bioinformatics/btp324>.
+[13] Li, Heng, and Richard Durbin. 2009. "Fast and Accurate Short Read Alignment with Burrowswheeler Transform." *Bioinformatics* 25 (14): 1754--60. <https://doi.org/10.1093/bioinformatics/btp324>.
 
-[14] \"Picard Tools - by Broad Institute.\" n.d. <https://broadinstitute.github.io/picard/>.
+[14] "Picard Tools - by Broad Institute." n.d. <https://broadinstitute.github.io/picard/>.
 
-[15] Li, Heng, Bob Handsaker, Alec Wysoker, Tim Fennell, Jue Ruan, Nils Homer, Gabor Marth, Goncalo Abecasis, Richard Durbin, and 1000 Genome Project Data Processing Subgroup. 2009. \"The Sequence Alignment/Map Format and SAMtools.\" *Bioinformatics* 25 (16): 2078--79. <https://doi.org/10.1093/bioinformatics/btp352>.
+[15] Li, Heng, Bob Handsaker, Alec Wysoker, Tim Fennell, Jue Ruan, Nils Homer, Gabor Marth, Goncalo Abecasis, Richard Durbin, and 1000 Genome Project Data Processing Subgroup. 2009. "The Sequence Alignment/Map Format and SAMtools." *Bioinformatics* 25 (16): 2078--79. <https://doi.org/10.1093/bioinformatics/btp352>.
 
-[16] Tarbell, Evan D., and Tao Liu. 2019. \"HMMRATAC: a Hidden Markov ModeleR for ATAC-seq.\" *Nucleic Acids Research* 47 (16): e91. <https://doi.org/10.1093/nar/gkz533>.
+[16] Tarbell, Evan D., and Tao Liu. 2019. "HMMRATAC: a Hidden Markov ModeleR for ATAC-seq." *Nucleic Acids Research* 47 (16): e91. <https://doi.org/10.1093/nar/gkz533>.
 
-[17] Yu, Guangchuang, Li-Gen Wang, and Qing-Yu He. 2015a. \"ChIPseeker: An r/Bioconductor Package for ChIP Peak Annotation, Comparison and Visualization.\" *Bioinformatics* 31 (14): 2382--83. <https://doi.org/10.1093/bioinformatics/btv145>.
+[17] Yu, Guangchuang, Li-Gen Wang, and Qing-Yu He. 2015a. "ChIPseeker: An r/Bioconductor Package for ChIP Peak Annotation, Comparison and Visualization." *Bioinformatics* 31 (14): 2382--83. <https://doi.org/10.1093/bioinformatics/btv145>.
 
-[18] Vargas, Claire, Manon Brunet, Alban Ricard, Damien Varry, Dorian Larrieu, Fernando Muzzopappa, Fabian Erdel, et al. n.d. \"The Intrinsically Disordered Region of the E3 Ubiquitin Ligase TRIP12 Induces the Formation of Chromatin Condensates and Interferes with DNA Damage Response.\" <https://doi.org/10.1101/2023.09.13.556486>.
-
-
-
+[18] Vargas, Claire, Manon Brunet, Alban Ricard, Damien Varry, Dorian Larrieu, Fernando Muzzopappa, Fabian Erdel, et al. n.d. "The Intrinsically Disordered Region of the E3 Ubiquitin Ligase TRIP12 Induces the Formation of Chromatin Condensates and Interferes with DNA Damage Response." <https://doi.org/10.1101/2023.09.13.556486>.
