@@ -110,6 +110,10 @@ nextflow run workflow.nf
 
 It will take around 15 mins for the first run since Nextflow need to pull all the required container, but subsequent run should be a lot quicker (\~5-10mins) since the container is downloaded.
 
+The output files will be generate in:
+
+`ATAC-seq_Peak_Calling_Pipeline/output`
+
 ### Pipeline Overview
 
 The following is a simplified representation of the workflow in a Directed Acyclic Graph (DAG):
@@ -175,37 +179,37 @@ For reference, hg38 is used as it is the most popular option. it is automaticall
 
 ------------------------------------------------------------------------
 
-## Outputs
+## Expected Outputs
 
 The four outputs of this pipeline are as follows:
 
-1.  Pre-trim MultiQC Report
+1.  `output/{sample_ID}_pre-alignment_multiQC_report.html`
 
     -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer over-representation and contamination of primers and adapters in the pre-trimmed pair-end fastq.
 
-2.  Post-trim MultiQC Report
+2.  `output/{sample_ID}_post-alignment_multiQC_report.html`
 
     -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer over-representation and contamination of primers and adapters in the trimmed pair-end fastq.
 
 3.  Peaks File
 
-    -   ``` MACS2_output/{Sample_ID}/``{Sample_ID}``_peaks.narrowPeak ```
+    -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_peaks.narrowPeak`
 
         -   A narrowPeak (.narrowPeak) file is used by the ENCODE project to provide called peaks of signal enrichment based on pooled, normalized (interpreted) data. It is a BED 6+4 format, which means the first 6 columns of a standard BED file with **4 additional fields**:
 
             ![](images/narrowPeak.png)
 
-    -   `MACS2_output/{Sample_ID}/{Sample_ID}_peaks.xls`
+    -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_peaks.xls`
 
         -   a tabular file which contains information about called peaks. Additional information includes pileup and fold enrichment
 
-    -   `MACS2_output/{Sample_ID}/{Sample_ID}_summits.bed` :
+    -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_summits.bed` :
 
         -   peak summits locations for every peak.
 
 4.  Peak Annotation Plot
 
-    -   `peak_plot.pdf` : Contain 2 plots:
+    -   `output/chipseeker_output` : Contain 2 plots:
 
         -   Pie chart of genomic region annotation:
 
