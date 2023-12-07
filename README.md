@@ -221,6 +221,8 @@ The four outputs of this pipeline are as follows:
 
 ### Expected Output Directory Tree
 
+![](images/output_tree.png)
+
 ------------------------------------------------------------------------
 
 ## References {#references}
