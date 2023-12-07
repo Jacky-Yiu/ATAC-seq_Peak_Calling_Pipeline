@@ -27,7 +27,6 @@ process DOWNLOAD_REFERENCE {
 
 process PRE_FASTQC {
     tag "PRE_FASTQC on $sample_id"
-    publishDir params.outputDir, mode: 'copy'
     
     input:
     tuple val(sample_id), path(reads)
@@ -51,17 +50,16 @@ process PRE_MULTIQC {
     tuple val(sample_id), path(fastqc)
 
     output:
-    path "${sample_id}_pre-alignment_multiQC_report.html"
+    path "${sample_id}_pre_trimming_multiQC_report.html"
 
     script:
     """
-    multiqc --filename ${sample_id}_pre-alignment_multiQC_report $fastqc
+    multiqc --filename ${sample_id}_pre_trimming_multiQC_report $fastqc
     """
 }
 
 process POST_FASTQC {
     tag "POST_FASTQC on $sample_id"
-    publishDir params.outputDir, mode: 'copy'
     
     input:
     tuple val(sample_id), path(reads)
@@ -85,19 +83,17 @@ process POST_MULTIQC {
     tuple val(sample_id), path(fastqc)
 
     output:
-    path "${sample_id}_post-alignment_multiQC_report.html"
+    path "${sample_id}_post_trimming_multiQC_report.html"
 
     script:
     """
-    multiqc --filename ${sample_id}_post-alignment_multiQC_report $fastqc
+    multiqc --filename ${sample_id}_post_trimming_multiQC_report $fastqc
     """
 }
 
 // Trimmomatic process
 process TRIMMOMATIC {
     tag "TRIMMOMATIC on $sample_id"
-    
-    publishDir params.outputDir, mode: 'copy'
     
     input:
     tuple val(sample_id), path(reads)
@@ -120,7 +116,6 @@ process TRIMMOMATIC {
 // minimap2 process
 process MINIMAP2_SAMTOOLS {
     tag "MINIMAP2 on $sample_id"
-    publishDir params.outputDir, mode: 'copy'
     
     input:
     tuple val(sample_id), path(trimmed_reads)
@@ -139,7 +134,6 @@ process MINIMAP2_SAMTOOLS {
 // MARKDUP process
 process MARKDUP {
     tag "MARKDUP on $sample_id"
-    publishDir params.outputDir, mode: 'copy'
     
     input:
     tuple val(sample_id), path(bam)
