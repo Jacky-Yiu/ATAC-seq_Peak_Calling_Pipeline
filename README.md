@@ -52,7 +52,7 @@ These steps will allow researchers to conduct robust analysis on ATAC-seq data a
 
 ### Rationale
 
-Despite the simplicity and robustness of ATAC-seq, a major impediment exists as there are few bioinformatic analysis tools developed specifically for ATAC-seq data [[7](#0)]. Analysis tools used in ChIP-seq and DNase-seq (e.g. [MACS2](#0) [[8](#0)], [HOMER](#0) [[9](#0)], etc) have been applied to ATAC-seq assuming similar data characteristics [[10](#0)].
+Despite the simplicity and robustness of ATAC-seq, a major impediment exists as there are few bioinformatic analysis tools developed specifically for ATAC-seq data [[7](#references)]. Analysis tools used in ChIP-seq and DNase-seq (e.g. [MACS2](#0) [[8]#references)], [HOMER](#0) [[9](#references)], etc) have been applied to ATAC-seq assuming similar data characteristics [[10](#references)].
 
 The major focus of this pipeline is to show case current resources for ATAC-seq analysis and develop a basic pipeline workflow that covers the major parts of ATAC-seq data analysis.
 
@@ -213,7 +213,7 @@ The four outputs of this pipeline are as follows:
 
 ------------------------------------------------------------------------
 
-## References {#references}
+## References
 
 [1] Buenrostro, Jason D., Beijing Wu, Howard Y. Chang, and William J. Greenleaf. 2015. "ATAC-seq: A Method for Assaying Chromatin Accessibility Genome-Wide." *Current Protocols in Molecular Biology* 109 (January): 21.29.1--9. <https://doi.org/10.1002/0471142727.mb2129s109>.
 
