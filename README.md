@@ -112,7 +112,7 @@ It will take around 15 mins for the first run since Nextflow need to pull all th
 
 The output files will be generate in:
 
-`ATAC-seq_Peak_Calling_Pipeline/output`
+`output/`
 
 ### Pipeline Overview
 
@@ -209,7 +209,7 @@ The four outputs of this pipeline are as follows:
 
 4.  Peak Annotation Plot
 
-    -   `output/chipseeker_output` : Contain 2 plots:
+    -   `output/chipseeker_output/{Sample_ID}/peak_plot.pdf` : Contain 2 plots:
 
         -   Pie chart of genomic region annotation:
 
@@ -218,6 +218,10 @@ The four outputs of this pipeline are as follows:
         -   Upset Plot of genomic region annotation:
 
             ![](images/jacky_upset.png)
+
+### Expected Output Tree
+
+![](images/tree.png)
 
 ------------------------------------------------------------------------
 
