@@ -36,6 +36,10 @@ The following figures show the schematic diagram of ATAC-seq [[2](#references)]:
 
 ![](images/ATAC.png)
 
+In ATAC-seq, a peak refers to a region in the genome where the transposase enzyme used in the assay has successfully inserted sequencing adapters into open chromatin. Open chromatin regions are accessible to the transposase enzyme and are indicative of regulatory elements such as promoters, enhancers, and other functional elements.
+
+Peak calling is the core analysis in ATAC-seq, it identifying regions of the genome that show significant enrichment of signal. It enables researchers to systematically identify, quantify, and interpret regions of the genome that are functionally relevant based on experimental data.
+
 ### Purpose
 
 My pipeline will cover the four most important steps in ATAC-seq data analysis in Human genome:
