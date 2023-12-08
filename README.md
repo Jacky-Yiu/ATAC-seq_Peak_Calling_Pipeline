@@ -157,7 +157,7 @@ For this pipeline, an example human genome ATAC-seq data is used, it came from a
 
 Since the aim of the pipeline is to cover the general peak analysis of ATAC-seq, the background of the data is not of particular interest to me, I only need an example ATAC-seq data on human genome.
 
-The original data is more than 2GB, I used the following command to sample the original fastq and produce two example sample pair-end reads that is used in the pipeline.
+The original data is more than 14GB. To create a smaller subset of reads to test the pipeline, I used the following command to sample the original fastq `SRR26784755_1.fastq.gz` and `SRR26784755_2.fastq.gz` and produce two example sample pair-end reads that is used in the pipeline.
 
 ``` bash
 seqtk sample -s100 SRR26784755_2.fastq.gz 100000 > genome_a2.fq
@@ -169,7 +169,9 @@ seqtk sample -s654 SRR26784755_1.fastq.gz 100000 > genome_b1.fq
 gzip genome_*.fq
 ```
 
-Basically, `seqtk sample` randomly sample (seeds = 100 and 654) 100000 reads from the original fastq to create 2 smaller sample. The pipeline is design to take in multiple fastq in the input file as long as the have the following naming convention:
+Basically, `seqtk sample` randomly (using seeds = 100 and 654) sample 100000 reads from the original fastq to create 2 smaller sample `genome_a` and `genome_b` (2 fastq for each sample, each files are 3.6M). 
+
+The pipeline is design to take in multiple fastq in the input file as long as the have the following naming convention:
 
 -   `{sample_name}1.fq.gz`
 
@@ -193,7 +195,7 @@ The four outputs of this pipeline are as follows:
 
     -   A HTML file that visualize base quality scores, GC content, sequence length distribution, sequence duplication levels, k-mer over-representation and contamination of primers and adapters in the trimmed pair-end fastq.
 
-3.  Peaks File
+3.  Peaks Files
 
     -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_peaks.narrowPeak`
 
@@ -209,7 +211,7 @@ The four outputs of this pipeline are as follows:
 
         -   peak summits locations for every peak.
 
-4.  Peak Annotation Plot
+4.  Peak Annotation Plots
 
     -   `output/chipseeker_output/{Sample_ID}/peak_plot.pdf` : Contain 2 plots:
 
