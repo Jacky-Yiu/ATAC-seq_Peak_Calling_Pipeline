@@ -91,7 +91,7 @@ staphb/trimmomatic:latest
 niemasd/minimap2_samtools:latest
 broadinstitute/picard:latest
 dukegcb/macs2:latest
-jackyyiu0810/chipseeker:v0.9
+jackyyiu0810/chipseeker:v0.9 (developed by myself)
 ```
 
 Nextflow will automatically download all the container and run the analysis inside them, so you do need to manually download them, just make sure `singularity` is properly installed and is in you PATH.
@@ -232,8 +232,6 @@ In conclusion, the ATAC-seq pipeline presented here aims to address the critical
 The rationale section underscores the existing challenges arising from the limited availability of dedicated analysis tools for ATAC-seq data. While tools designed for related assays have been adapted, the pipeline acknowledges the necessity for a more specific approach. The purpose section outlines the pipeline's comprehensive coverage of key analysis steps, offering researchers a robust framework for conducting ATAC-seq data analysis on the human genome.
 
 The usage section provides clear instructions for installation and execution, ensuring accessibility for users. The pipeline leverages containerization technology for seamless deployment of necessary tools, streamlining the analysis process.
-
-With an overview of the pipeline's phases and a simplified representation in the Directed Acyclic Graph (DAG), users gain insights into the workflow's structure. The incorporation of quality control, alignment, post-alignment processing, peak calling, and peak annotation ensures a thorough analysis, generating biologically meaningful results.
 
 In summary, this ATAC-seq pipeline contributes to bridging the gap in bioinformatics tools, offering a user-friendly and comprehensive solution for researchers engaging in ATAC-seq data analysis. The continuous development and refinement of such pipelines are crucial for advancing our understanding of gene regulation and the broader implications in various biological contexts.
 
