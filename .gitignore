@@ -14,3 +14,4 @@ work/
 *.nextflow.log*
 *html
 *trace*txt
+SRR26784755*
