@@ -225,7 +225,7 @@ The four outputs of this pipeline are as follows:
 
 ![](images/output_tree.png)
 
-# Conclusion
+## Conclusion
 
 In conclusion, the ATAC-seq pipeline presented here aims to address the critical need for specialized bioinformatic tools tailored to the unique characteristics of ATAC-seq data. The background section highlights the significance of ATAC-seq in exploring the epigenetic landscape, emphasizing its applications in diverse biological contexts.
 
