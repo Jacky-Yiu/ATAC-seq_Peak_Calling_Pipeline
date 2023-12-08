@@ -199,9 +199,12 @@ The four outputs of this pipeline are as follows:
 
     -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_peaks.narrowPeak`
 
-        -   A narrowPeak (.narrowPeak) file is used by the ENCODE project to provide called peaks of signal enrichment based on pooled, normalized (interpreted) data. It is a BED 6+4 format, which means the first 6 columns of a standard BED file with **4 additional fields**:
+        -   A narrowPeak (.narrowPeak) file is used by the ENCODE project to provide called peaks of signal enrichment based on pooled, normalized (interpreted) data. 
+        
+        -  It is a BED 6+4 format, which means the first 6 columns of a standard BED file with **4 additional fields**:
 
             ![](images/narrowPeak.png)
+        - Each row in the narrowPeak file represents a called peak. We use this file for the next step, Peak Annotation
 
     -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_peaks.xls`
 
