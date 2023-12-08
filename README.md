@@ -242,7 +242,7 @@ In summary, this ATAC-seq pipeline contributes to bridging the gap in bioinforma
 
 ------------------------------------------------------------------------
 
-## References {#references}
+## References
 
 [1] Buenrostro, Jason D., Beijing Wu, Howard Y. Chang, and William J. Greenleaf. 2015. "ATAC-seq: A Method for Assaying Chromatin Accessibility Genome-Wide." *Current Protocols in Molecular Biology* 109 (January): 21.29.1--9. <https://doi.org/10.1002/0471142727.mb2129s109>.
 
