@@ -235,10 +235,9 @@ The usage section provides clear instructions for installation and execution, en
 
 In summary, this ATAC-seq pipeline contributes to bridging the gap in bioinformatics tools, offering a user-friendly and comprehensive solution for researchers engaging in ATAC-seq data analysis. The continuous development and refinement of such pipelines are crucial for advancing our understanding of gene regulation and the broader implications in various biological contexts.
 
-
 ------------------------------------------------------------------------
 
-## References
+## References {#references}
 
 [1] Buenrostro, Jason D., Beijing Wu, Howard Y. Chang, and William J. Greenleaf. 2015. "ATAC-seq: A Method for Assaying Chromatin Accessibility Genome-Wide." *Current Protocols in Molecular Biology* 109 (January): 21.29.1--9. <https://doi.org/10.1002/0471142727.mb2129s109>.
 
