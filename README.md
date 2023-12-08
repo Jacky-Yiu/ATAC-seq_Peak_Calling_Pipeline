@@ -241,11 +241,7 @@ The four outputs of this pipeline are as follows:
 
 In conclusion, the ATAC-seq pipeline presented here aims to address the critical need for specialized bioinformatic tools tailored to the unique characteristics of ATAC-seq data. The background section highlights the significance of ATAC-seq in exploring the epigenetic landscape, emphasizing its applications in diverse biological contexts.
 
-The rationale section underscores the existing challenges arising from the limited availability of dedicated analysis tools for ATAC-seq data. While tools designed for related assays have been adapted, the pipeline acknowledges the necessity for a more specific approach. The purpose section outlines the pipeline's comprehensive coverage of key analysis steps, offering researchers a robust framework for conducting ATAC-seq data analysis on the human genome.
-
-The usage section provides clear instructions for installation and execution, ensuring accessibility for users. The pipeline leverages containerization technology for seamless deployment of necessary tools, streamlining the analysis process.
-
-In summary, this ATAC-seq pipeline contributes to bridging the gap in bioinformatics tools, offering a user-friendly and comprehensive solution for researchers engaging in ATAC-seq data analysis. The continuous development and refinement of such pipelines are crucial for advancing our understanding of gene regulation and the broader implications in various biological contexts.
+This ATAC-seq pipeline contributes to bridging the gap in bioinformatics tools, offering a user-friendly tool for researchers engaging in ATAC-seq data analysis. The continuous development and refinement of such pipelines are crucial for advancing our understanding of gene regulation and the broader implications in various biological contexts.
 
 ------------------------------------------------------------------------
 
