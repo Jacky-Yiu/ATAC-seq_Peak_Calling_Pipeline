@@ -160,22 +160,29 @@ Since the aim of the pipeline is to cover the general peak analysis of ATAC-seq,
 The original data is more than 14GB. To create a smaller subset of reads to test the pipeline, I used the following command to sample the original fastq `SRR26784755_1.fastq.gz` and `SRR26784755_2.fastq.gz` and produce two example sample pair-end reads that is used in the pipeline.
 
 ``` bash
-seqtk sample -s100 SRR26784755_2.fastq.gz 100000 > genome_a2.fq
-seqtk sample -s100 SRR26784755_1.fastq.gz 100000 > genome_a1.fq
+seqtk sample -s100 SRR26784755_2.fastq.gz 100000 > genome_a2.fastq
+seqtk sample -s100 SRR26784755_1.fastq.gz 100000 > genome_a1.fastq
 
-seqtk sample -s654 SRR26784755_2.fastq.gz 100000 > genome_b2.fq
-seqtk sample -s654 SRR26784755_1.fastq.gz 100000 > genome_b1.fq
+seqtk sample -s654 SRR26784755_2.fastq.gz 100000 > genome_b2.fastq
+seqtk sample -s654 SRR26784755_1.fastq.gz 100000 > genome_b1.fastq
 
 gzip genome_*.fq
 ```
 
 Basically, `seqtk sample` randomly (using seeds = 100 and 654) sample 100000 reads from the original fastq to create 2 smaller sample `genome_a` and `genome_b` (2 fastq for each sample, each files are 3.6M). 
 
-The pipeline is design to take in multiple fastq in the input file as long as the have the following naming convention:
+you can also try to run the pipeline with the original data, just download it using 
 
--   `{sample_name}1.fq.gz`
+``` bash
+fastq-dump --split-3 --gzip SRR26784755 
+```
+and put the output fastq files in `input`, however this will take a long time to run so I recommand to just use the provided fastq in input.
 
--   `{sample_name}2.fq.gz`
+The pipeline is design to take in multiple pair-end fastqs in the input file as long as the have the following naming convention:
+
+-   `{sample_name}1.fastq.gz`
+
+-   `{sample_name}2.fastq.gz`
 
 For reference, hg38 is used as it is the most popular option. it is automatically downloaded when you run the pipeline, it is downloaded from the UCSC human genome database:
 

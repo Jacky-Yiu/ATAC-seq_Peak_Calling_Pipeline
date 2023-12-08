@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 
 // Define input parameters
-params.reads = "$projectDir/input/*{1,2}.fq.gz"
+params.reads = "$projectDir/input/*{1,2}.fastq.gz"
 params.outputDir = "output"
 
 log.info """\
