@@ -176,7 +176,7 @@ you can also try to run the pipeline with the original data, just download it us
 ``` bash
 fastq-dump --split-3 --gzip SRR26784755 
 ```
-and put the output fastq files in `input`, however this will take a long time to run so I recommand to just use the provided fastq in input.
+and put the output fastq files in `input`, however this will take a long time to run so I recommand to just use the provided fastq in `input`.
 
 The pipeline is design to take in multiple pair-end fastqs in the input file as long as the have the following naming convention:
 
