@@ -42,7 +42,7 @@ Peak calling is the core analysis in ATAC-seq, it identifying regions of the gen
 
 ### Purpose
 
-My pipeline will cover the four most important steps in ATAC-seq data analysis in Human genome:
+My pipeline will cover the five most important steps in ATAC-seq data analysis in Human genome:
 
 1.  Quality Control
 
@@ -94,7 +94,7 @@ dukegcb/macs2:latest
 jackyyiu0810/chipseeker:v0.9 (developed by myself)
 ```
 
-Nextflow will automatically download all the container and run the analysis inside them, so you do need to manually download them, just make sure `singularity` is properly installed and is in you PATH.
+Nextflow will automatically download all the container and run the analysis inside them, so you do not need to manually download them, just make sure `singularity` is properly installed and is in you PATH.
 
 ### Running the Pipeline
 
