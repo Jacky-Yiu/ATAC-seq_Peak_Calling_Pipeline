@@ -42,7 +42,7 @@ Peak calling is the core analysis in ATAC-seq, it identifying regions of the gen
 
 ### Purpose
 
-My pipeline will cover the five most important steps in ATAC-seq data analysis in Human genome:
+My pipeline will cover five steps in ATAC-seq data analysis in Human genome:
 
 1.  Quality Control
 
@@ -169,13 +169,14 @@ seqtk sample -s654 SRR26784755_1.fastq.gz 100000 > genome_b1.fastq
 gzip genome_*.fq
 ```
 
-Basically, `seqtk sample` randomly (using seeds = 100 and 654) sample 100000 reads from the original fastq to create 2 smaller sample `genome_a` and `genome_b` (2 fastq for each sample, each files are 3.6M). 
+Basically, `seqtk sample` randomly (using seeds = 100 and 654) sample 100000 reads from the original fastq to create 2 smaller sample `genome_a` and `genome_b` (2 fastq for each sample, each files are 3.6M).
 
-you can also try to run the pipeline with the original data, just download it using 
+you can also try to run the pipeline with the original data, just download it using
 
 ``` bash
 fastq-dump --split-3 --gzip SRR26784755 
 ```
+
 and put the output fastq files in `input`, however this will take a long time to run so I recommand to just use the provided fastq in `input`.
 
 The pipeline is design to take in multiple pair-end fastqs in the input file as long as the have the following naming convention:
@@ -206,12 +207,13 @@ The four outputs of this pipeline are as follows:
 
     -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_peaks.narrowPeak`
 
-        -   A narrowPeak (.narrowPeak) file is used by the ENCODE project to provide called peaks of signal enrichment based on pooled, normalized (interpreted) data. 
-        
-        -  It is a BED 6+4 format, which means the first 6 columns of a standard BED file with **4 additional fields**:
+        -   A narrowPeak (.narrowPeak) file is used by the ENCODE project to provide called peaks of signal enrichment based on pooled, normalized (interpreted) data.
+
+        -   It is a BED 6+4 format, which means the first 6 columns of a standard BED file with **4 additional fields**:
 
             ![](images/narrowPeak.png)
-        - Each row in the narrowPeak file represents a called peak. We use this file for the next step, Peak Annotation
+
+        -   Each row in the narrowPeak file represents a called peak. We use this file for the next step, Peak Annotation
 
     -   `output/MACS2_output/{Sample_ID}/{Sample_ID}_peaks.xls`
 
@@ -245,7 +247,7 @@ This ATAC-seq pipeline contributes to bridging the gap in bioinformatics tools, 
 
 ------------------------------------------------------------------------
 
-## References
+## References {#references}
 
 [1] Buenrostro, Jason D., Beijing Wu, Howard Y. Chang, and William J. Greenleaf. 2015. "ATAC-seq: A Method for Assaying Chromatin Accessibility Genome-Wide." *Current Protocols in Molecular Biology* 109 (January): 21.29.1--9. <https://doi.org/10.1002/0471142727.mb2129s109>.
 
