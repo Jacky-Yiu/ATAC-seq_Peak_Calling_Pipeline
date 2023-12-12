@@ -85,6 +85,7 @@ git clone https://github.com/Jacky-Yiu/ATAC-seq_Peak_Calling_Pipeline.git
 The pipeline use the following container from [DockerHub](https://hub.docker.com/):
 
 ``` bash
+curlimages/curl:latest
 biocontainers/fastqc:v0.11.9_cv8
 ewels/multiqc:latest
 staphb/trimmomatic:latest

@@ -127,7 +127,7 @@ process MINIMAP2_SAMTOOLS {
     script:
     """
     mkdir -p minimap2_output
-    minimap2 -a -x sr -Y -K 100M $reference $trimmed_reads | samtools view -bS | samtools sort -o minimap2_output/${sample_id}_sorted.bam
+    minimap2 -t 2 -a -x sr -Y -K 100M $reference $trimmed_reads | samtools view -bS | samtools sort -o minimap2_output/${sample_id}_sorted.bam
     """
 }
 
