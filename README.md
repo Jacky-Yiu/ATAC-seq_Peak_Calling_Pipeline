@@ -125,7 +125,7 @@ There is some issue with `singularity` in the training server ([training.nextflo
 ```bash
 source /cvmfs/soft.computecanada.ca/config/profile/bash.sh
 ```
-2. Than run this to load apprainer
+2. Than run this to load apptainer
 ```bash
 module load apptainer
 ```
