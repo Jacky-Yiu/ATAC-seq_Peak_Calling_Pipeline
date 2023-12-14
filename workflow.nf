@@ -15,6 +15,7 @@ log.info """\
 
 // Conda environment for FastQC
 process DOWNLOAD_REFERENCE {
+    errorStrategy 'retry', maxRetries: 2
     tag "Download Reference"
     output:
     path "hg38.fa.gz"
@@ -26,6 +27,7 @@ process DOWNLOAD_REFERENCE {
 }
 
 process PRE_FASTQC {
+    errorStrategy 'retry', maxRetries: 2
     tag "PRE_FASTQC on $sample_id"
     
     input:
@@ -43,6 +45,7 @@ process PRE_FASTQC {
 }
 
 process PRE_MULTIQC {
+    errorStrategy 'retry', maxRetries: 2
     tag "PRE_MULTIQC on $sample_id"
     publishDir params.outputDir, mode:'copy'
 
@@ -59,6 +62,7 @@ process PRE_MULTIQC {
 }
 
 process POST_FASTQC {
+    errorStrategy 'retry', maxRetries: 2
     tag "POST_FASTQC on $sample_id"
     
     input:
@@ -76,6 +80,7 @@ process POST_FASTQC {
 }
 
 process POST_MULTIQC {
+    errorStrategy 'retry', maxRetries: 2
     tag "POST_MULTIQC on $sample_id"
     publishDir params.outputDir, mode:'copy'
 
@@ -93,6 +98,7 @@ process POST_MULTIQC {
 
 // Trimmomatic process
 process TRIMMOMATIC {
+    errorStrategy 'retry', maxRetries: 2
     tag "TRIMMOMATIC on $sample_id"
     
     input:
@@ -115,6 +121,7 @@ process TRIMMOMATIC {
 
 // minimap2 process
 process MINIMAP2_SAMTOOLS {
+    errorStrategy 'retry', maxRetries: 2
     tag "MINIMAP2 on $sample_id"
     
     input:
@@ -133,6 +140,7 @@ process MINIMAP2_SAMTOOLS {
 
 // MARKDUP process
 process MARKDUP {
+    errorStrategy 'retry', maxRetries: 2
     tag "MARKDUP on $sample_id"
     
     input:
@@ -153,6 +161,7 @@ process MARKDUP {
 }
 
 process MACS2 {
+    errorStrategy 'retry', maxRetries: 2
     tag "MACS2 on $sample_id"
     publishDir params.outputDir, mode: 'copy'
     
@@ -183,6 +192,7 @@ process MACS2 {
 }
 
 process CHIPSEEKER {
+    errorStrategy 'retry', maxRetries: 2
     tag "CHIPSEEKER on $sample_id"
     publishDir params.outputDir, mode: 'copy'
     
