@@ -84,8 +84,9 @@ git clone https://github.com/Jacky-Yiu/ATAC-seq_Peak_Calling_Pipeline.git
 
 The pipeline use the following container from [DockerHub](https://hub.docker.com/):
 
+
 ``` bash
-curlimages/curl:latest
+jackyyiu0810/curl:v0.1
 biocontainers/fastqc:v0.11.9_cv8
 ewels/multiqc:latest
 staphb/trimmomatic:latest
@@ -117,6 +118,21 @@ The output files will be generate in:
 
 `output/`
 
+### Troubleshooting (Please Read)
+There is some issue with `singularity` in the training server ([training.nextflow.io](training.nextflow.io)), if you also encounter issue with `singularity` do the following step
+
+1. Run the following command:
+```bash
+source /cvmfs/soft.computecanada.ca/config/profile/bash.sh
+```
+2. Than run this to load apprainer
+```bash
+module load apptainer
+```
+3. And you can run the pipeline
+```bash
+nextflow run workflow.nf
+```
 ### Pipeline Overview
 
 The following is a simplified representation of the workflow in a Directed Acyclic Graph (DAG):
