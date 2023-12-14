@@ -85,15 +85,15 @@ git clone https://github.com/Jacky-Yiu/ATAC-seq_Peak_Calling_Pipeline.git
 The pipeline use the following container from [DockerHub](https://hub.docker.com/):
 
 
-``` bash
-jackyyiu0810/curl:v0.1
-biocontainers/fastqc:v0.11.9_cv8
-ewels/multiqc:latest
-staphb/trimmomatic:latest
-niemasd/minimap2_samtools:latest
-broadinstitute/picard:latest
-dukegcb/macs2:latest
-jackyyiu0810/chipseeker:v0.9 (developed by myself)
+``` 
+- biocontainers/fastqc:v0.11.9_cv8
+- ewels/multiqc:latest
+- staphb/trimmomatic:latest
+- niemasd/minimap2_samtools:latest
+- broadinstitute/picard:latest
+- dukegcb/macs2:latest
+- jackyyiu0810/chipseeker:v0.9 (developed by myself)
+- jackyyiu0810/curl:v0.1 (developed by myself)
 ```
 
 Nextflow will automatically download all the container and run the analysis inside them, so you do not need to manually download them, just make sure `singularity` is properly installed and is in you PATH.
@@ -118,8 +118,8 @@ The output files will be generate in:
 
 `output/`
 
-### Troubleshooting (Please Read)
-There is some issue with `singularity` in the training server ([training.nextflow.io](training.nextflow.io)), if you also encounter issue with `singularity` do the following step
+### Troubleshooting (Please Read!!!)
+There is some issue with `singularity` in the training server ([training.nextflow.io](training.nextflow.io)), if you also encounter issue with `singularity` in the training server do the following steps:
 
 1. Run the following command:
 ```bash
